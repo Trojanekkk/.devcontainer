@@ -6,13 +6,13 @@ servers: 1
 agents: 2
 image: rancher/k3s:v1.27.6-k3s1
 network: my-custom-net
-token: someToken # Token to join the cluster
+token: someToken # Token for joining the cluster
 volumes: 
   - volume: /k3d-volume:/k3d-volume
 ports:
+  - port: 3000:3000
   - port: 5000:5000
   - port: 8080:80
-  - port: 3000:3000
 options:
   k3d:
     disableLoadbalancer: false
